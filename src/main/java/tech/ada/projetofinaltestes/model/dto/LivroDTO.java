@@ -2,6 +2,7 @@ package tech.ada.projetofinaltestes.model.dto;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 @Data
@@ -18,10 +19,17 @@ public class LivroDTO {
     private Double preco;
     @NotNull(message = "Campo 'paginas' não pode estar vazio.")
     @Min(value = 100)
-    private String paginas;
+    private Integer paginas;
     @NotBlank(message = "Campo 'ISBN' não pode estar vazio.")
     private String isbn;
     //Data precisa ser no futuro
     @Future(message = "A data precisa ser futura em relação ao dia atual.")
     private LocalDate dataPublicacao;
+
+    public LivroDTO() {
+    }
+
+    public LivroDTO(String titulo, String resumo, String sumario, Double preco, Integer paginas, String isbn, LocalDate dataPublicacao) {
+    }
 }
+

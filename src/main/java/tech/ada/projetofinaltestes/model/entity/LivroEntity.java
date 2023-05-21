@@ -24,9 +24,10 @@ public class LivroEntity {
     @Column (nullable = false)
     private Double preco;
     @Column (nullable = false)
-    private String paginas;
+    private Integer paginas;
     @Column (nullable = false)
     private String isbn;
     private LocalDate dataPublicacao;
 
 }
+
